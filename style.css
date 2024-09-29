@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(#04091eb3, #04091eb3), url('img/worker-8959737_1280.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: #fff;
+    display: inline-block;
+    margin-left: 1em;
+  }
+
+.biz_name{
+    color:  #9c7644;
+  }
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    display: inline-block;
+    padding: 15px 30px;
+    list-style-type: none;
+}
+
+.nav-links ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #e2dbdb;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background:#9c7644;
+    display: block;
+    margin: auto;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.hero{
+   width: 90%;
+   position: absolute;
+   top: 50%;
+   margin-left: 5em;
+   transform: translateY(100px);
+   opacity: 1;
+   animation: fade-up 2s forwards;
+}
+
+.hero__h1{
+    font-size: 7em;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero__p{
+    color: #fff;
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+.hero_btn{
+   background: transparent;
+   margin: 15px 0; 
+   padding: 0.5rem;
+   font-size: 20px;
+   color: #fff;
+   border: 2px solid #9c7644;
+   transition: 1s ease-in-out;
+}
+
+.hero_btn:hover{
+   background: #9c7644;
+}
+
+nav .fa{
+    display: none;
+}
+
+@keyframes fade-up{
+    0%{
+       opacity: 0;
+       transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+       transform: translateY(-100px);
+    }
+}
+
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 900px) {
+
+    .nav-links ul li{
+        display: block;
+    }
+    
+    body{
+        overflow: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        background: #9c7644;
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        text-align: left;
+        right: -300px;
+        z-index: 2;
+    }
+
+    .hero{
+        top: 60%;
+    }
+    .hero__h1{
+         font-size: 2rem;
+    }
+    
+  nav .fa{
+    display: block;
+    color: #fff;
+    margin: 2rem;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .nav-links ul{
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 991px){
+   .hero__h1{
+    font-size: 3em;
+   }
+}
